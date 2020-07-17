@@ -1,0 +1,24 @@
+name: Backend package
+
+on: [push, pull_request]
+
+jobs:
+  Checker_PEP8_and_TestCase:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.8.3"
+    - name: Installation dependency
+      run: |
+        python -m pip install --upgrade pip
+#        TODO: variable for ENV
+        pip install -r requirements/local.txt
+    - name: Lint with flake8
+      run: |
+        flake8 . --config=setup.cfg
+    - name: Run pytest
+      run: |
+        pytest

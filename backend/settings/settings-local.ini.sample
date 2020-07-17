@@ -1,0 +1,9 @@
+[base]
+SECRET_KEY: 3-$h!(c+_36a*nz*ja$sn@i)j8-xj(v$_m52hny$8q4!36zna$
+
+[db]
+NAME: {MY_DATABASE_NAME}
+USER: postgres
+PASSWORD:
+HOST: localhost
+PORT: 5432
